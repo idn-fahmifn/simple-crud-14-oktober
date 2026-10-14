@@ -7,7 +7,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="grid grid-cols-4 gap-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
                 <div class="bg-blue-600 overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">
                         <h2 class="text-lg font-bold uppercase text-white">Total Tasks</h2>
@@ -33,6 +33,22 @@
                     </div>
                 </div>
             </div>
+
+            <div class="bg-white overflow-hidden mt-4 p-4 shadow-sm sm:rounded-lg">
+
+                <div class="flex justify-between">
+                    <div class="">
+                        <h2 class="text-lg font-bold">My Tasks</h2>
+                        <p>List of my task</p>
+                    </div>
+                    <div class="">
+                        <x-secondary-button class="">
+                        Add new task
+                        </x-secondary-button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </x-app-layout>
