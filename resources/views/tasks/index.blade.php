@@ -42,13 +42,19 @@
                         <p>List of my task</p>
                     </div>
                     <div class="">
-                        <x-secondary-button class="">
-                        Add new task
+                        <x-secondary-button class="" type="button" x-data="" x-on:click.prevent="$dispatch('open-modal', 'open-new')">
+                            Add new task
                         </x-secondary-button>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
+
+    <x-modal name="open-new" :show="false" focusable>
+        <div class="p-8">
+            <h2>New Task</h2>
+        </div>
+    </x-modal>
+
 </x-app-layout>
