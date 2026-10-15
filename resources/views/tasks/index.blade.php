@@ -63,7 +63,27 @@
                     </svg>
                 </button>
             </div>
-            @endif            
+            @endif  
+            
+            <div class="border border-slate-300 overflow-hidden mt-4 p-4 shadow-sm sm:rounded-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+
+                <!-- looping data :  -->
+
+                @forelse ($tasks as $task)
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="p-6 text-gray-900">
+                            <h3 class="font-bold">{{$task->task_title}}</h3>
+                            <p class="text-sm">Progress <span class="font-semibold text-green-700">{{$task->progress}}%</span> </p>
+                        </div>
+                    </div>
+                @empty
+                    
+                @endforelse
+
+                    
+                </div>
+            </div>
         </div>
     </div>
 
