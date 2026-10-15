@@ -78,7 +78,11 @@
                         </div>
                     </div>
                 @empty
-                    
+                    <div class="col-span-full bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="p-6 text-gray-900">
+                            <p class="text-sm text-center">Task not found</p>
+                        </div>
+                    </div>
                 @endforelse
 
                     
