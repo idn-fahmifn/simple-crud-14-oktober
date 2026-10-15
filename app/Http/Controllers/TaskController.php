@@ -111,8 +111,14 @@ class TaskController extends Controller
             ->with('success', 'Task has been updated');
     }
 
-    public function destroy(string $id)
+    public function destroy($param)
     {
-        //
+        $data = Task::where('uuid', $param)->first();
+        if ($data->image_cover) {
+            Storage::disk('public')->delete('tasks/'.$data->image_cover);
+        }
+        $data->delete();
+        return redirect()->route('tasks.index')
+        ->with('success','Task has been deleted');
     }
 }

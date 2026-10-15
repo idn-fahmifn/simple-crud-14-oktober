@@ -16,9 +16,21 @@
                         <p class="">{{$data->desc}}</p>
                     </div>
                     <div class="">
-                        <x-secondary-button class="" type="button" x-data="" x-on:click.prevent="$dispatch('open-modal', 'open-new')">
-                            Edit Task
-                        </x-secondary-button>
+
+                        <form action="{{route('tasks.destroy', $data->uuid)}}" method="post">
+                            @csrf
+                            @method('delete')
+                            <x-secondary-button class="" type="button" x-data="" x-on:click.prevent="$dispatch('open-modal', 'open-new')">
+                                Edit Task
+                            </x-secondary-button>
+
+                            <x-danger-button onclick="return confirm('are you sure?')" type="submit">
+                                Delete Task
+                            </x-danger-button>
+
+                        </form>
+
+                        
                     </div>
                 </div>
 
