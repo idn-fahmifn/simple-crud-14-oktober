@@ -54,7 +54,7 @@
         <div class="p-8">
             <h2>New Task</h2>
 
-            <form action="{{route('tasks.update', $task->uuid)}}" enctype="multipart/form-data" method="post">
+            <form action="{{route('tasks.update', $data->uuid)}}" enctype="multipart/form-data" method="post">
                 @csrf
                 @method('put')
                 <div class="my-4">
@@ -71,7 +71,7 @@
 
                 <div class="my-4">
                     <x-input-label for="deskripsi" :value="__('Description')" />
-                    <x-textarea class="block mt-1 w-full" name="deskripsi"></x-textarea>
+                    <x-textarea class="block mt-1 w-full" name="deskripsi">{{old('deskripsi', $data->desc)}}</x-textarea>
                     <x-input-error :messages="$errors->get('deskripsi')" class="mt-2" />
                 </div>
 
