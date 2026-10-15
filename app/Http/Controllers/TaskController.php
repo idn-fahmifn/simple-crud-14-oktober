@@ -57,9 +57,10 @@ class TaskController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($param)
     {
-        //
+        $data = Task::where('uuid', $param)->firstOrFail();
+        return view('tasks.show', compact('data'));
     }
 
     /**
