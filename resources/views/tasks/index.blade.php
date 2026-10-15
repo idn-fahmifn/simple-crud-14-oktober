@@ -48,6 +48,22 @@
                     </div>
                 </div>
             </div>
+
+            @if (session('success'))
+                <div x-data="{ open: true }" x-show="open" class="flex justify-between p-4 my-4 text-green-800 bg-green-50 rounded-lg" role="alert">
+                <!-- Teks Alert -->
+                <div class="text-sm font-medium">
+                    {{ session('success') }}
+                </div>
+                
+                <!-- Tombol Silang (Close) -->
+                <button @click="open = false" type="button" class="text-green-500 hover:bg-green-100 rounded-lg p-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            @endif            
         </div>
     </div>
 
