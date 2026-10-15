@@ -21,6 +21,9 @@
                         </x-secondary-button>
                     </div>
                 </div>
+
+                <img src="{{ asset('storage/tasks/' . $data->image_cover) }}" class="img-full h-[100px] mt-4" alt="">
+
             </div>
 
             @if (session('success'))
