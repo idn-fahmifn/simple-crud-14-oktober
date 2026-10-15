@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('task_title')->unique();
             $table->text('desc');
             $table->string('image-task');
-            $table->double('progress');
+            $table->double('progress')->default(0);
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
