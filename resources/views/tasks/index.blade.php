@@ -73,7 +73,7 @@
                 @forelse ($tasks as $task)
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div class="p-6 text-gray-900">
-                            <h3 class="font-bold">{{$task->task_title}}</h3>
+                            <h3 class="font-bold"><a href="{{ route('tasks.show', $task->uuid) }}">{{ $task->task_title  }}</a></h3>
                             <p class="text-sm">Progress <span class="font-semibold text-green-700">{{$task->progress}}%</span> </p>
                         </div>
                     </div>
