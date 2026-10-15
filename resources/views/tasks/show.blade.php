@@ -54,9 +54,9 @@
         <div class="p-8">
             <h2>New Task</h2>
 
-            <form action="{{route('tasks.store')}}" enctype="multipart/form-data" method="post">
+            <form action="{{route('tasks.update', $task->uuid)}}" enctype="multipart/form-data" method="post">
                 @csrf
-
+                @method('put')
                 <div class="my-4">
                     <x-input-label for="nama_tugas" :value="__('Task Name')" />
                     <x-text-input id="nama_tugas" class="block mt-1 w-full" type="text" name="nama_tugas" :value="old('nama_tugas', $data->task_title)" required />
